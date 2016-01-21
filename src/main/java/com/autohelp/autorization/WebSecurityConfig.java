@@ -20,14 +20,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
         http.authorizeRequests()
         .antMatchers("/tools/*").authenticated()
                 .anyRequest().permitAll();
-                //.antMatchers("/webresources/**","/","index","/index","/appointments","/appointmentsResult","/contact","/price").permitAll();
-
-
-
-//        http.authorizeRequests().
-//                antMatchers("/tools/**").permitAll().anyRequest().authenticated();
-
-
 
         http.
                  formLogin()
@@ -48,7 +40,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
         {
             auth
                     .inMemoryAuthentication()
-                    .withUser("user").password("password").roles("USER");
+                    .withUser("autohelp").password("auto-help-63").roles("USER");
+            auth
+                    .inMemoryAuthentication()
+                    .withUser("Jekhuligan").password("Admin").roles("USER");
         }
 
     }
