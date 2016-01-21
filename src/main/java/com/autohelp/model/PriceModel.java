@@ -18,10 +18,8 @@ public class PriceModel
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
     private String service;
-    private int price;
-    private String brand;
-    private String model;
-
+    private String pricevaz;
+    private String priceino;
 
     public long getId()
     {
@@ -42,33 +40,24 @@ public class PriceModel
         return service;
     }
 
-    public void setPrice(int price)
+
+    public String getPricevaz()
     {
-        this.price = price;
+        return pricevaz;
     }
 
-    public int getPrice()
+    public void setPricevaz(String pricevaz)
     {
-        return price;
+        this.pricevaz = pricevaz;
     }
 
-    public String getBrand()
+    public String getPriceino()
     {
-        return brand;
+        return priceino;
     }
 
-    public void setBrand(String brand)
+    public void setPriceino(String priceino)
     {
-        this.brand = brand;
-    }
-
-    public String getModel()
-    {
-        return model;
-    }
-
-    public void setModel(String model)
-    {
-        this.model = model;
+        this.priceino = priceino;
     }
 }

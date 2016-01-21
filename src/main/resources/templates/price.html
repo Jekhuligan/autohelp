@@ -72,18 +72,16 @@
             <thead>
             <tr>
                 <th>Услуги</th>
-                <th>Стоимость (&#8381;)</th>
-                <th>Марка</th>
-                <th>Модель</th>
+                <th>Отечественные</th>
+                <th>Иномарки</th>
 
             </tr>
             </thead>
             <tbody>
             <tr th:each="price : ${price}">
                 <strong><td th:text="${price.service}"></td></strong>
-                <strong><td th:text="${price.price}"></td></strong>
-                <strong><td th:text="${price.brand}"></td></strong>
-                <strong><td th:text="${price.model}"></td></strong>
+                <strong><td th:text="${price.pricevaz}"></td></strong>
+                <strong><td th:text="${price.priceino}"></td></strong>
 
             </tr>
             </tbody>
