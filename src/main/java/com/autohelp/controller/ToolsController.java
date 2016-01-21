@@ -51,6 +51,13 @@ public class ToolsController
         return "redirect:/tools/priceView";
     }
 
+    @RequestMapping(value="/tools/priceUpdate", method=RequestMethod.GET)
+    public String priceUpdate(@RequestParam(value="id", required=false) long id, Model model) {
+        PriceModel price = priceRepository.findOne(id);
+        model.addAttribute("price", price);
+        return "/tools/priceEdit";
+    }
+
     @RequestMapping("/tools/priceDelete")
     public String priceToolDeleteGet(@RequestParam(value="id", required=false) long id, Model model)
     {
@@ -64,6 +71,21 @@ public class ToolsController
         Iterable<AppointmentsModel> appointmentsModels = appointmentsRepository.findAll();
         model.addAttribute("appointmentsTool", appointmentsModels);
         return "tools/appointmentsTool";
+    }
+
+    @RequestMapping(value="/tools/appointmentsUpdate", method= RequestMethod.GET)
+    public String appointmentsFormUpdate(@RequestParam(value="id", required=false) long id, Model model)
+    {
+        AppointmentsModel appointmentsModel = appointmentsRepository.findOne(id);
+        model.addAttribute("appointments", appointmentsModel);
+        return "/tools/appointmentsUpdate";
+    }
+
+    @RequestMapping(value="/tools/appointmentsUpdate", method=RequestMethod.POST)
+    public String appointmentsUpdateSubmit(@ModelAttribute AppointmentsModel appointmentsModel, Model model) {
+        model.addAttribute("appointments", appointmentsModel);
+        appointmentsRepository.save(appointmentsModel);
+        return "redirect:/tools/appointmentsTool";
     }
 
     @RequestMapping("/tools/appointmentsToolDelete")

@@ -58,6 +58,8 @@
 
             <form action="#" th:action="@{/tools/priceEdit}" th:object="${price}" method="post" id="commentForm">
 
+                <input type="hidden" th:field="*{id}"/>
+
                 <div class="formSection" id="formSectionService">
                     <div class="formLabel">
                         <label for="service">Name</label> <span class="required">*</span>
@@ -87,7 +89,7 @@
 
 
                 <div class="formSubmit">
-                    <p><button type="submit" name="submit" id="submit">Добавить</button></p>
+                    <p><button type="submit" name="submit" id="submit">Добавить/Изменить</button></p>
                 </div>
 
             </form>

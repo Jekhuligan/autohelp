@@ -89,7 +89,7 @@
         <th>phone</th>
         <th>date</th>
         <th>time</th>
-        <th>Delete</th>
+        <th>Редактировать</th>
 
     </tr>
     </thead>
@@ -101,7 +101,7 @@
         <td th:text="${appointmentsTool.phone}"></td>
         <td th:text="${appointmentsTool.date}"></td>
         <td th:text="${appointmentsTool.time}"></td>
-        <td><a href="appointmentsToolDelete" th:href="@{appointmentsToolDelete(id=${appointmentsTool.id})}">Delete</a></td></tr>
+        <td><a href="appointmentsToolDelete" th:href="@{appointmentsToolDelete(id=${appointmentsTool.id})}">Удалить</a><a>/</a><a href="appointmentsUpdate" th:href="@{appointmentsUpdate(id=${appointmentsTool.id})}">Изменить</a></td></tr>
 
     </tbody>
 </table>
