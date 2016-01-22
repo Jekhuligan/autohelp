@@ -55,7 +55,7 @@ public class ToolsController
     public String priceUpdate(@RequestParam(value="id", required=false) long id, Model model) {
         PriceModel price = priceRepository.findOne(id);
         model.addAttribute("price", price);
-        return "/tools/priceEdit";
+        return "tools/priceEdit";
     }
 
     @RequestMapping("/tools/priceDelete")
@@ -78,7 +78,7 @@ public class ToolsController
     {
         AppointmentsModel appointmentsModel = appointmentsRepository.findOne(id);
         model.addAttribute("appointments", appointmentsModel);
-        return "/tools/appointmentsUpdate";
+        return "tools/appointmentsUpdate";
     }
 
     @RequestMapping(value="/tools/appointmentsUpdate", method=RequestMethod.POST)
